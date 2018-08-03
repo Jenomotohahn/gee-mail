@@ -16,6 +16,10 @@
 				return messageBox;
 				}
 
+				var countHeader = document.createElement('h3');
+				countHeader.innerHTML = 'You have ' + window.geemails.length + ' messages!';
+				main.appendChild(countHeader);
+
 				for (var i = 0; i < window.geemails.length; i++){
 
 					var dateSection = makeMessage ('div', 'messageDate', window.geemails[i].date);
@@ -29,8 +33,12 @@
 
 					var bodySection = makeMessage ('div', 'messageBody', window.geemails[i].body);
 					main.appendChild(bodySection);
-
 				}
+
+
+
+
+
 
 
 
