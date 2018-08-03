@@ -6,13 +6,37 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+				
+				function makeMessage (elem, cName, data,){
+					//helper function to create and append messages
+				var messageBox = document.createElement(elem);
+				messageBox.className = cName;
+				messageBox.innerHTML = data;
+			 
+				return messageBox;
+				}
+
+				for (var i = 0; i < window.geemails.length; i++){
+
+					var dateSection = makeMessage ('div', 'messageDate', window.geemails[i].date);
+					main.appendChild(dateSection);
+
+				}
+
+
+
+
+
+
+
+
+
       };
     </script>
 	</head>
 	<body>
+		<h1 id = "titleHeader">thinkOfaWittyTitleLaterzz</h1>
 		<div class="container" id="main">
-			Build Me!
 		</div>
 	</body>
 </html>
