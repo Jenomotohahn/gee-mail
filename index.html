@@ -21,14 +21,14 @@
 				main.appendChild(countHeader);
 
 				for (var i = 0; i < window.geemails.length; i++){
-
+					
 					var dateSection = makeMessage ('div', 'messageDate', window.geemails[i].date);
 					main.appendChild(dateSection);
 
-					var senderSection = makeMessage('div','messageSender', window.geemails[i].sender);
+					var senderSection = makeMessage('div','messageSender', 'From: ' + window.geemails[i].sender);
 					main.appendChild(senderSection);
 
-					var subjectSection = makeMessage('div','messageSubject', window.geemails[i].subject);
+					var subjectSection = makeMessage('div','messageSubject','Subject: ' + window.geemails[i].subject);
 					main.appendChild(subjectSection);
 
 					var bodySection = makeMessage ('div', 'messageBody', window.geemails[i].body);
