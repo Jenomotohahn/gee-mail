@@ -26,38 +26,67 @@
 				// For Loop to itirate through the array and label data:
 
 				for (var i = 0; i < window.geemails.length; i++){
+
+					var mailbox = makeMessage('div', 'mail', null);
+					mailbox.className = 'mailNumber'
+					main.appendChild(mailbox);
 					
 					var dateSection = makeMessage ('div', 'messageDate', window.geemails[i].date);
-					main.appendChild(dateSection);
+					mailbox.appendChild(dateSection);
 
 					var senderSection = makeMessage('div','messageSender', 'From: ' + window.geemails[i].sender);
-					main.appendChild(senderSection);
+					mailbox.appendChild(senderSection);
 
 					var subjectSection = makeMessage('div','messageSubject','Subject: ' + window.geemails[i].subject);
-					main.appendChild(subjectSection);
-
-				// Button to show message:
+					mailbox.appendChild(subjectSection);
+					
+					var bodySection = document.createElement('div')
+					bodySection.id = 'messBody';
+					mailbox.appendChild(bodySection);
+		
+					// Button to show message:
 
 					var showMessbtn = document.createElement('BUTTON');
-					showMessbtn.className = 'showMessage';
+					showMessbtn.className = 'showMessagebtn';
 					showMessbtn.innerHTML = 'Show Message';
-					main.appendChild(showMessbtn);
+					bodySection.appendChild(showMessbtn);	
 
+				var bodydata = makeMessage ('div', 'messageBody', window.geemails[i].body);
+				bodySection.appendChild(bodydata);	
 
-					var bodySection = makeMessage ('div', 'messageBody', window.geemails[i].body);
-					main.appendChild(bodySection);
 				}
 
-	
 
 
+				var selectbutton = document.getElementsByClassName('showMessagebtn');
 
+				for (var i = 0; i < selectbutton.length; i++){
+				selectbutton[i].addEventListener('click', hideShow)
+				}
 
+				function hideShow(){
+					if (this.innerHTML === 'Show Message'){
+						this.innerHTML = 'Hide Message';
+					}else{
+						this.innerHTML = 'Show Message';
+					}
+				}
+				
+				for (var i = 0; i < selectbutton.length; i++){
+					selectbutton[i].addEventListener('click', showMessageData);
+				}
+				
+				function showMessageData(){
+					var messDatashow = document.querySelectorAll('.messageBody')[0];
+					
+    			if (messDatashow.style.display === 'block'){
+        			messDatashow.style.display = 'none';
+    					}else {
+        			messDatashow.style.display = 'block';
+    }
+					
 
-
-
-
-
+				}
 
 
 

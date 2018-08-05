@@ -1,3 +1,13 @@
 body{
     background-color: rgb(205, 241, 205)
 }
+
+.messageBody {
+    display: none;
+    color: pink;
+
+}
+
+.showMessage{
+    display: block;
+}
