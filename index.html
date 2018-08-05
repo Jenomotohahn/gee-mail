@@ -16,9 +16,14 @@
 				return messageBox;
 				}
 
+				//Message Counter:
+
 				var countHeader = document.createElement('h3');
 				countHeader.innerHTML = 'You have ' + window.geemails.length + ' messages!';
 				main.appendChild(countHeader);
+
+
+				// For Loop to itirate through the array and label data:
 
 				for (var i = 0; i < window.geemails.length; i++){
 					
@@ -31,11 +36,19 @@
 					var subjectSection = makeMessage('div','messageSubject','Subject: ' + window.geemails[i].subject);
 					main.appendChild(subjectSection);
 
+				// Button to show message:
+
+					var showMessbtn = document.createElement('BUTTON');
+					showMessbtn.className = 'showMessage';
+					showMessbtn.innerHTML = 'Show Message';
+					main.appendChild(showMessbtn);
+
+
 					var bodySection = makeMessage ('div', 'messageBody', window.geemails[i].body);
 					main.appendChild(bodySection);
 				}
 
-
+	
 
 
 
