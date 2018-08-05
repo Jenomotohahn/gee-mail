@@ -19,9 +19,14 @@
 				//Message Counter:
 
 				var countHeader = document.createElement('h3');
+				countHeader.id = 'countMail'
 				countHeader.innerHTML = 'You have ' + window.geemails.length + ' messages!';
-				main.appendChild(countHeader);
+				header.appendChild(countHeader);
 
+				var logo = document.createElement('img');
+				logo.id = 'siteLogo';
+				logo.src='https://cdn.iconscout.com/public/images/icon/premium/png-192/pigeon-carrier-mail-news-communication-3e93c7d306eed270-192x192.png';
+				header.appendChild(logo);
 
 				// For Loop to itirate through the array and label data:
 
@@ -30,6 +35,11 @@
 					var mailbox = makeMessage('div', 'mail', null);
 					mailbox.className = 'mailNumber'
 					main.appendChild(mailbox);
+
+					var img = document.createElement('img');
+					img.className = 'sendericon';
+					img.src = 'https://cdn.shopify.com/s/files/1/0655/6853/products/Preciosa_DSC_0993.jpg?v=1527573825';
+					mailbox.appendChild(img);
 					
 					var dateSection = makeMessage ('div', 'messageDate', window.geemails[i].date);
 					mailbox.appendChild(dateSection);
@@ -77,13 +87,13 @@
 				}
 				
 				function showMessageData(){
-					var messDatashow = document.querySelectorAll('.messageBody')[0];
-					
-    			if (messDatashow.style.display === 'block'){
-        			messDatashow.style.display = 'none';
-    					}else {
-        			messDatashow.style.display = 'block';
-    }
+					var messDatashow = this.querySelectorAll('.messageBody')[0];
+					console.log(messDatashow)
+    // 			if (messDatashow.style.display === 'block'){
+    //     			messDatashow.style.display = 'none';
+    // 					}else {
+    //     			messDatashow.style.display = 'block';
+    // }
 					
 
 				}
@@ -94,7 +104,11 @@
     </script>
 	</head>
 	<body>
-		<h1 id = "titleHeader">thinkOfaWittyTitleLaterzz</h1>
+		<div id="header">
+		<h1 id = "titleHeader">The E Carrier Pigeon</h1>
+		</div>
+
+
 		<div class="container" id="main">
 		</div>
 	</body>

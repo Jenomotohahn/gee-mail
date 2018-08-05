@@ -1,6 +1,63 @@
 body{
-    background-color: rgb(205, 241, 205)
+    background-image: url('http://themovescalifornia.com/wp-content/uploads/2018/05/background-old-paper-letter-psd-texture-and-old-Old-Letter-Template-paper-psd-images-texture-and-vintage-by-mgbstock-on-deviantart.jpg');
+    background-attachment: fixed;
+    background-size: 99%;
+    
 }
+
+.senderIcon{
+    width: 10%;
+    border-radius: 80%;
+    float: left;
+    padding-right: 15px;
+}
+
+.messageDate{
+    font-family: Helvetica;
+    font-size: 10px;
+}
+
+#siteLogo{
+    position:relative;
+    left:20px;
+    top: -200px;
+    width: 20%;
+}
+
+.showMessagebtn{
+    float: right;
+    position:relative;
+    bottom: 45px;
+    font-size: 15px;
+    background-color: rgb(170, 161, 161);
+    padding: 4px;
+    border-style: outset;
+
+}
+
+#titleHeader{
+   
+    top: 0px;
+    text-align: center;
+    color: rgb(160, 2, 2);
+    font-family: cursive;
+    font-size: 50px;
+}
+
+#countMail{
+    position: relative;
+    top: -30px;
+    text-align: center;
+    font-family: cursive;
+    font-size: 30px;
+}
+
+
+#main{
+    position: relative;
+    top: -200px;
+}
+
 
 .messageBody {
     display: none;
@@ -8,6 +65,9 @@ body{
 
 }
 
-.showMessage{
-    display: block;
+.mailNumber{
+    border: dotted;
+    padding: 20px;
+
 }
+
