@@ -65,8 +65,9 @@
 				}
 			
 
+			// function for adding new messages at interval:
+
 			function createNewMessage(){
-				var newMessArray = [];
 				var newMessage = getNewMessage();
 
 				var mailbox = makeMessage('div', 'mail', null);
@@ -96,7 +97,10 @@
 					var showMessbtn = document.createElement('BUTTON');
 					showMessbtn.className = 'showMessagebtn';
 					showMessbtn.innerHTML = 'Show Message';
-					bodySection.appendChild(showMessbtn);	
+					showMessbtn.addEventListener('click',hideShow);
+					showMessbtn.addEventListener('click',showMessageData);
+					bodySection.appendChild(showMessbtn);
+						
 
 					var bodydata = makeMessage ('div', 'messageBody', newMessage.body);
 					bodySection.appendChild(bodydata);	
@@ -104,11 +108,17 @@
 					var byeByeBirdy = document.createElement('BUTTON');
 					byeByeBirdy.className = 'byeByeBirdy';
 					byeByeBirdy.innerHTML = 'Shoo Birdy!'
+					byeByeBirdy.addEventListener('click',shooBird);
 					bodydata.appendChild(byeByeBirdy);
 
-			}
+					var messageCountClass = document.getElementsByClassName('mailNumber')
+					 var messageCount = messageCountClass.length
+					 var getCountClass = document.getElementById('countMail')
+						getCountClass.innerHTML = 'You have ' + messageCount + ' 	Pigeons waiting!';
+					header.appendChild(getCountClass);
 
-		setInterval(createNewMessage,1000);
+			}
+		setInterval(createNewMessage,3000);
 
 
 
@@ -133,10 +143,9 @@
 				
 				function showMessageData(){
 					var messDatashow = this.nextElementSibling
-					console.log(messDatashow)
     			if (messDatashow.style.display === 'block'){
         			messDatashow.style.display = 'none';
-    					}else {
+    				}else {
         			messDatashow.style.display = 'block';
     }
 				}
@@ -165,11 +174,6 @@
 						getCountClass.innerHTML = 'You have ' + messageCount + ' 	Pigeons waiting!';
 					header.appendChild(getCountClass);
 				}
-				
-				
-		
-
-
 			
 
       };

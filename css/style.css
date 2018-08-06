@@ -65,15 +65,21 @@ body{
     top: -200px;
 }
 
+.messBody{
+    padding: 20px;
+}
+
 
 .messageBody {
     display: none;
     color:black;
+    width: 80%;
 
 }
 
 .byeByeBirdy{
     float: right;
+    font-size: 15px;
 }
 
 .mailNumber{
