@@ -16,12 +16,6 @@
 				return messageBox;
 				}
 
-				//Message Counter:
-
-				var countHeader = document.createElement('h3');
-				countHeader.id = 'countMail'
-				countHeader.innerHTML = 'You have ' + window.geemails.length + ' messages!';
-				header.appendChild(countHeader);
 
 				var logo = document.createElement('img');
 				logo.id = 'siteLogo';
@@ -61,8 +55,13 @@
 					showMessbtn.innerHTML = 'Show Message';
 					bodySection.appendChild(showMessbtn);	
 
-				var bodydata = makeMessage ('div', 'messageBody', window.geemails[i].body);
-				bodySection.appendChild(bodydata);	
+					var bodydata = makeMessage ('div', 'messageBody', window.geemails[i].body);
+					bodySection.appendChild(bodydata);	
+
+					var byeByeBirdy = document.createElement('BUTTON');
+					byeByeBirdy.className = 'byeByeBirdy';
+					byeByeBirdy.innerHTML = 'Shoo Birdy!'
+					bodydata.appendChild(byeByeBirdy);
 
 				}
 
@@ -94,11 +93,34 @@
     					}else {
         			messDatashow.style.display = 'block';
     }
-					
-
 				}
+				
+				//Message Counter:
 
+				var countHeader = document.createElement('h3');
+				var messageCountClass = document.getElementsByClassName('mailNumber')
+				var messageCount = messageCountClass.length
+				countHeader.id = 'countMail'
+				countHeader.innerHTML = 'You have ' + messageCount + ' messages!';
+				header.appendChild(countHeader);
+			
+			var byeByeBirdyBtn = document.getElementsByClassName('byeByeBirdy');
 
+				for (var i = 0; i < byeByeBirdyBtn.length; i++){
+					byeByeBirdyBtn[i].addEventListener('click', shooBird);
+				}
+				
+				function shooBird(){
+					var parentDiv = this.parentElement.parentElement.parentElement;
+					parentDiv.remove();
+					var messageCountClass = document.getElementsByClassName('mailNumber')
+					 var messageCount = messageCountClass.length
+					 var getCountClass = document.getElementById('countMail')
+						getCountClass.innerHTML = 'You have ' + messageCount + ' 	messages!';
+					header.appendChild(getCountClass);
+				}
+				
+			
 
       };
     </script>

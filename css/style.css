@@ -20,7 +20,7 @@ body{
 #siteLogo{
     position:relative;
     left:20px;
-    top: -200px;
+    top: -100px;
     width: 20%;
 }
 
@@ -45,11 +45,13 @@ body{
 }
 
 #countMail{
-    position: relative;
-    top: -30px;
+
+    position:relative;
+    top: -200px;
     text-align: center;
     font-family: cursive;
     font-size: 30px;
+    color: red;
 }
 
 
@@ -63,6 +65,10 @@ body{
     display: none;
     color:black;
 
+}
+
+.byeByeBirdy{
+    float: right;
 }
 
 .mailNumber{
