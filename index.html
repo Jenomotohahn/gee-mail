@@ -87,13 +87,13 @@
 				}
 				
 				function showMessageData(){
-					var messDatashow = this.querySelectorAll('.messageBody')[0];
+					var messDatashow = this.nextElementSibling
 					console.log(messDatashow)
-    // 			if (messDatashow.style.display === 'block'){
-    //     			messDatashow.style.display = 'none';
-    // 					}else {
-    //     			messDatashow.style.display = 'block';
-    // }
+    			if (messDatashow.style.display === 'block'){
+        			messDatashow.style.display = 'none';
+    					}else {
+        			messDatashow.style.display = 'block';
+    }
 					
 
 				}
