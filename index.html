@@ -23,7 +23,6 @@
 				header.appendChild(logo);
 
 				// For Loop to itirate through the array and label data:
-
 				for (var i = 0; i < window.geemails.length; i++){
 
 					var mailbox = makeMessage('div', 'mail', null);
@@ -64,6 +63,53 @@
 					bodydata.appendChild(byeByeBirdy);
 
 				}
+			
+
+			function createNewMessage(){
+				var newMessArray = [];
+				var newMessage = getNewMessage();
+
+				var mailbox = makeMessage('div', 'mail', null);
+					mailbox.className = 'mailNumber'
+					main.appendChild(mailbox);
+
+					var img = document.createElement('img');
+					img.className = 'sendericon';
+					img.src = 'https://cdn.shopify.com/s/files/1/0655/6853/products/Preciosa_DSC_0993.jpg?v=1527573825';
+					mailbox.appendChild(img);
+					
+					var dateSection = makeMessage ('div', 'messageDate', newMessage.date);
+					mailbox.appendChild(dateSection);
+
+					var senderSection = makeMessage('div','messageSender', 'From: ' + newMessage.sender);
+					mailbox.appendChild(senderSection);
+
+					var subjectSection = makeMessage('div','messageSubject','Subject: ' + newMessage.subject);
+					mailbox.appendChild(subjectSection);
+					
+					var bodySection = document.createElement('div')
+					bodySection.id = 'messBody';
+					mailbox.appendChild(bodySection);
+		
+					// Button to show message:
+
+					var showMessbtn = document.createElement('BUTTON');
+					showMessbtn.className = 'showMessagebtn';
+					showMessbtn.innerHTML = 'Show Message';
+					bodySection.appendChild(showMessbtn);	
+
+					var bodydata = makeMessage ('div', 'messageBody', newMessage.body);
+					bodySection.appendChild(bodydata);	
+
+					var byeByeBirdy = document.createElement('BUTTON');
+					byeByeBirdy.className = 'byeByeBirdy';
+					byeByeBirdy.innerHTML = 'Shoo Birdy!'
+					bodydata.appendChild(byeByeBirdy);
+
+			}
+
+		setInterval(createNewMessage,1000);
+
 
 
 
@@ -101,7 +147,7 @@
 				var messageCountClass = document.getElementsByClassName('mailNumber')
 				var messageCount = messageCountClass.length
 				countHeader.id = 'countMail'
-				countHeader.innerHTML = 'You have ' + messageCount + ' messages!';
+				countHeader.innerHTML = 'You have ' + messageCount + ' Pigeons waiting!';
 				header.appendChild(countHeader);
 			
 			var byeByeBirdyBtn = document.getElementsByClassName('byeByeBirdy');
@@ -116,10 +162,14 @@
 					var messageCountClass = document.getElementsByClassName('mailNumber')
 					 var messageCount = messageCountClass.length
 					 var getCountClass = document.getElementById('countMail')
-						getCountClass.innerHTML = 'You have ' + messageCount + ' 	messages!';
+						getCountClass.innerHTML = 'You have ' + messageCount + ' 	Pigeons waiting!';
 					header.appendChild(getCountClass);
 				}
 				
+				
+		
+
+
 			
 
       };
