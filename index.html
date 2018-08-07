@@ -75,7 +75,7 @@
 
 				var mailbox = makeMessage('div', 'mail', null);
 					mailbox.className = 'mailNumber'
-					main.appendChild(mailbox);
+					main.insertBefore(mailbox, main.firstChild);
 
 					var imgBox = makeMessage('div', 'imgBox', null);
 					mailbox.appendChild(imgBox);
