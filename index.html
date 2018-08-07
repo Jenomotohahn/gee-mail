@@ -26,13 +26,16 @@
 				for (var i = 0; i < window.geemails.length; i++){
 
 					var mailbox = makeMessage('div', 'mail', null);
-					mailbox.className = 'mailNumber'
+					mailbox.className = 'mailNumber';
 					main.appendChild(mailbox);
+
+					var imgBox = makeMessage('div', 'imgBox', null);
+					mailbox.appendChild(imgBox);
 
 					var img = document.createElement('img');
 					img.className = 'sendericon';
 					img.src = 'https://cdn.shopify.com/s/files/1/0655/6853/products/Preciosa_DSC_0993.jpg?v=1527573825';
-					mailbox.appendChild(img);
+					imgBox.appendChild(img);
 					
 					var dateSection = makeMessage ('div', 'messageDate', window.geemails[i].date);
 					mailbox.appendChild(dateSection);
@@ -74,10 +77,13 @@
 					mailbox.className = 'mailNumber'
 					main.appendChild(mailbox);
 
+					var imgBox = makeMessage('div', 'imgBox', null);
+					mailbox.appendChild(imgBox);
+
 					var img = document.createElement('img');
 					img.className = 'sendericon';
 					img.src = 'https://cdn.shopify.com/s/files/1/0655/6853/products/Preciosa_DSC_0993.jpg?v=1527573825';
-					mailbox.appendChild(img);
+					imgBox.appendChild(img);
 					
 					var dateSection = makeMessage ('div', 'messageDate', newMessage.date);
 					mailbox.appendChild(dateSection);

@@ -5,6 +5,12 @@ body{
     
 }
 
+
+.imgBox{
+    float:left;
+    margin-right: -500px;
+}
+
 .senderIcon{
     width: 10%;
     border-radius: 80%;
@@ -41,7 +47,7 @@ body{
     text-align: center;
     color: rgb(160, 2, 2);
     font-family: cursive;
-    font-size: 50px;
+    font-size: 70px;
 }
 
 #countMail{
